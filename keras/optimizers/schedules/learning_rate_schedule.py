@@ -644,6 +644,7 @@ class CosineDecay(LearningRateSchedule):
 
     def __call__(self, step):
         with tf.name_scope(self.name or "CosineDecay"):
+            print('__call__ called') #
             initial_learning_rate = tf.convert_to_tensor(
                 self.initial_learning_rate, name="initial_learning_rate"
             )
