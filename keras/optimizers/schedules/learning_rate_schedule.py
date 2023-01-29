@@ -654,9 +654,6 @@ class CosineDecay(LearningRateSchedule):
                 self.initial_learning_rate, name="initial_learning_rate"
             )
             dtype = initial_learning_rate.dtype
-            #validating decay_steps value
-            if not isinstance(self.decay_steps,int) or self.decay_steps<=0:
-                raise ValueError('decay_steps should be a nonzero positive integer')
             decay_steps = tf.cast(self.decay_steps, dtype)
 
             global_step_recomp = tf.cast(step, dtype)
