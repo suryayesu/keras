@@ -842,6 +842,10 @@ class LSTM(DropoutRNNCellMixin, RNN, base_layer.BaseRandomLayer):
     @property
     def implementation(self):
         return self.cell.implementation
+    
+    @property
+    def states(self):
+        return self.cell.states
 
     def get_config(self):
         config = {
